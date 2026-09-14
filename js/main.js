@@ -1,13 +1,21 @@
 (function () {
   const won = (n) => n.toLocaleString('ko-KR');
   const gradeLabel = { N: '신품', S: 'S급', A: 'A급', USED: 'USED' };
+  const catIcon = { '가방': 'i-bag', '시계': 'i-watch', '주얼리': 'i-jewelry', '의류': 'i-clothes', '신발': 'i-shoes', '액세서리': 'i-accessory', '지갑': 'i-wallet', '키즈': 'i-kids' };
+  const guessCat = (p) => p.cat || (/시계/.test(p.name) ? '시계' : /반지|목걸이|팔찌|브레이슬릿|알함브라/.test(p.name) ? '주얼리' : /지갑/.test(p.name) ? '지갑' : /코트|원피스|바지|긴소매|반소매|베스트|스커트/.test(p.name) ? '의류' : '가방');
+  const thumbHTML = (p) => p.img
+    ? '<img src="' + p.img + '" alt="' + p.brand + ' ' + p.name + '" loading="lazy">'
+    : '<svg class="pict"><use href="#' + (catIcon[guessCat(p)] || 'i-bag') + '"/></svg>';
+
+  // 픽토그램 스프라이트 주입
+  fetch('assets/icons.svg').then((r) => r.text()).then((svg) => { document.body.insertAdjacentHTML('afterbegin', svg); });
 
   function cardHTML(p) {
     const off = p.was ? Math.round((1 - p.price / p.was) * 100) : 0;
     return `
       <a href="#" class="card${p.soldout ? ' soldout' : ''}" data-id="${p.id}">
         <span class="card-thumb">
-          <img src="${p.img}" alt="${p.brand} ${p.name}" loading="lazy">
+          ${thumbHTML(p)}
           ${p.soldout ? '<em class="badge-soldout">거래진행중</em>' : ''}
           <button type="button" class="wish" aria-label="찜하기" data-wish><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
         </span>
