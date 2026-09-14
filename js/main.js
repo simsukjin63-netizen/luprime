@@ -1,14 +1,11 @@
 (function () {
   const won = (n) => n.toLocaleString('ko-KR');
   const gradeLabel = { N: '신품', S: 'S급', A: 'A급', USED: 'USED' };
-  const catIcon = { '가방': 'i-bag', '시계': 'i-watch', '주얼리': 'i-jewelry', '의류': 'i-clothes', '신발': 'i-shoes', '액세서리': 'i-accessory', '지갑': 'i-wallet', '키즈': 'i-kids' };
+  const catIcon = { '가방': 'handbag', '시계': 'watch', '주얼리': 'ring', '의류': 'dress', '신발': 'high-heels', '액세서리': 'eyeglasses', '지갑': 'wallet', '키즈': 'kids' };
   const guessCat = (p) => p.cat || (/시계/.test(p.name) ? '시계' : /반지|목걸이|팔찌|브레이슬릿|알함브라/.test(p.name) ? '주얼리' : /지갑/.test(p.name) ? '지갑' : /코트|원피스|바지|긴소매|반소매|베스트|스커트/.test(p.name) ? '의류' : '가방');
   const thumbHTML = (p) => p.img
     ? '<img src="' + p.img + '" alt="' + p.brand + ' ' + p.name + '" loading="lazy">'
-    : '<svg class="pict"><use href="#' + (catIcon[guessCat(p)] || 'i-bag') + '"/></svg>';
-
-  // 픽토그램 스프라이트 주입
-  fetch('assets/icons.svg').then((r) => r.text()).then((svg) => { document.body.insertAdjacentHTML('afterbegin', svg); });
+    : '<i class="fi fi-' + (catIcon[guessCat(p)] || 'handbag') + ' pict"></i>';
 
   function cardHTML(p) {
     const off = p.was ? Math.round((1 - p.price / p.was) * 100) : 0;

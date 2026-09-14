@@ -59,7 +59,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 /* ---------- hero ---------- */
 .hero { position: relative; }
 .hero-card { display: block; position: relative; aspect-ratio: 5 / 4; overflow: hidden; color: var(--white); }
-.hero-ico { position: absolute; right: -6%; top: 8%; width: 62%; height: 62%; stroke-width: 1.2; opacity: .28; transition: transform .6s; }
+.hero-ico { position: absolute; right: 4%; top: 10%; width: 46%; height: 46%; opacity: .32; transition: transform .6s; }
 .hero-card:hover .hero-ico { transform: rotate(-6deg) scale(1.04); }
 .hero-copy { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 32px; }
 .hero-copy em { display: block; font-style: normal; font-size: 12px; font-weight: 700; letter-spacing: 0; opacity: .75; margin-bottom: 10px; }
@@ -84,7 +84,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .category ul { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
 .category a { display: flex; flex-direction: column; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; }
 .category .thumb { width: 78px; height: 78px; border-radius: 50%; background: var(--bg-soft); display: grid; place-items: center; transition: transform .2s, background .2s, color .2s; color: var(--ink); }
-.category .thumb svg { width: 36px; height: 36px; stroke-width: 2.2; }
+.category .thumb .fi { width: 38px; height: 38px; }
 .category a:hover .thumb { transform: translateY(-3px); background: var(--green); color: var(--white); }
 .brand-chips { padding: 24px 20px 12px; }
 .brand-chips ul { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
@@ -96,7 +96,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .service { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-top: 28px; padding-bottom: 8px; }
 .service-card { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 8px; transition: border-color .2s; }
 .service-card:hover { border-color: var(--ink); }
-.svc-ico { width: 44px; height: 44px; flex-shrink: 0; color: var(--green); stroke-width: 2; }
+.svc-ico { width: 44px; height: 44px; flex-shrink: 0; color: var(--green); }
 .service-card strong { display: block; font-size: 15px; }
 .service-card span { font-size: 13px; color: var(--ink-3); }
 
@@ -131,7 +131,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .card { display: block; }
 .card-thumb { position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: 6px; background: var(--bg-soft); }
 .card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
-.card-thumb .pict { position: absolute; inset: 0; margin: auto; width: 42%; height: 42%; color: #b9b9b2; stroke-width: 1.6; transition: transform .35s, color .35s; }
+.card-thumb .pict { position: absolute; inset: 0; margin: auto; width: 40%; height: 40%; color: #b9b9b2; transition: transform .35s, color .35s; }
 .card:hover .card-thumb img { transform: scale(1.04); }
 .card:hover .card-thumb .pict { transform: scale(1.08); color: var(--green); }
 .wish { position: absolute; right: 10px; bottom: 10px; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.9); color: var(--ink-3); }
@@ -162,7 +162,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 /* ---------- band ---------- */
 .band { padding-top: 64px; }
 .band-card { display: flex; align-items: center; gap: 20px; min-height: 120px; padding: 24px 28px; border-radius: 8px; color: var(--white); }
-.band-card svg { width: 48px; height: 48px; flex-shrink: 0; stroke-width: 1.8; }
+.band-card .fi { width: 48px; height: 48px; flex-shrink: 0; }
 .band-card strong { display: block; font-size: 18px; font-weight: 800; }
 .band-card span { font-size: 13px; opacity: .85; }
 .b-green { background: var(--green); } .b-gold { background: var(--gold); } .b-ink { background: var(--ink); } .b-blue { background: #2b4aa3; }
@@ -171,7 +171,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .highend { margin-top: 72px; background: #0f1512; color: var(--white); padding-bottom: 64px; }
 .highend-swiper { position: relative; height: 520px; }
 .hi-slide { display: block; height: 100%; position: relative; background: radial-gradient(ellipse at 70% 40%, #263a30 0%, #0f1512 60%); }
-.hi-ico { position: absolute; right: max(40px, calc((100% - var(--inner)) / 2 + 40px)); top: 50%; transform: translateY(-50%); width: 320px; height: 320px; stroke-width: .8; color: var(--gold); opacity: .55; }
+.hi-ico { position: absolute; right: max(40px, calc((100% - var(--inner)) / 2 + 40px)); top: 50%; transform: translateY(-50%); width: 300px; height: 300px; color: var(--gold); opacity: .6; }
 .hi-copy { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 100%; max-width: var(--inner); padding: 0 20px 56px; }
 .hi-copy p { font-size: 16px; opacity: .85; }
 .hi-copy strong { display: block; font-size: 52px; font-weight: 800; line-height: 1.05; }
@@ -208,7 +208,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .about-grid li { padding: 28px 24px; border: 1px solid var(--line); border-radius: 8px; transition: border-color .2s, transform .2s; }
 .about-grid li:hover { border-color: var(--green); transform: translateY(-2px); }
-.about-grid svg { width: 40px; height: 40px; color: var(--gold); stroke-width: 1.8; margin-bottom: 14px; }
+.about-grid .fi { width: 40px; height: 40px; color: var(--gold); margin-bottom: 14px; }
 .about-grid strong { display: block; font-size: 17px; margin-bottom: 8px; }
 .about-grid p { font-size: 13px; color: var(--ink-2); }
 
@@ -243,6 +243,8 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .footer-info span:first-child { margin-left: 0; }
 .footer-info .note { margin-top: 12px; color: #8f8f8f; }
 .footer-info .copy { margin-top: 12px; color: #777; }
+.footer-info .credit { margin-top: 4px; font-size: 11px; color: #666; }
+.footer-info .credit a { text-decoration: underline; }
 
 /* ---------- floating ---------- */
 .floating { position: fixed; right: 24px; bottom: 32px; z-index: 40; }
@@ -278,7 +280,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .hero-card { aspect-ratio: 4 / 3; }
   .category ul { gap: 18px 12px; }
   .category .thumb { width: 64px; height: 64px; }
-  .category .thumb svg { width: 28px; height: 28px; }
+  .category .thumb .fi { width: 28px; height: 28px; }
   .service { grid-template-columns: 1fr; }
   .block { padding-top: 48px; }
   .block-head h2 { font-size: 28px; flex-wrap: wrap; gap: 4px 10px; }
