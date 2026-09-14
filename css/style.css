@@ -29,9 +29,12 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .header-top { display: grid; grid-template-columns: 180px minmax(280px, 480px) 1fr auto; align-items: center; gap: 24px; height: 76px; transition: height .25s; }
 .site-header.compact .header-top { height: 60px; }
 .logo { line-height: 0; }
-.logo a { display: inline-flex; align-items: center; }
+.logo a { display: inline-flex; align-items: center; gap: 10px; }
 .logo img { height: 30px; width: auto; }
+.brand-ko { font-size: 13px; font-weight: 600; color: var(--ink-2); line-height: 1; padding-left: 10px; border-left: 1px solid var(--line); }
 .footer-logo { height: 22px; width: auto; margin-bottom: 20px; filter: invert(1); opacity: .9; }
+.cs .operator { color: #ddd; margin: -8px 0 20px; }
+.footer-info strong { color: var(--white); }
 .search { position: relative; }
 .search input { width: 100%; height: 42px; border: 1.5px solid var(--ink); border-radius: 21px; padding: 0 46px 0 18px; font: inherit; font-size: 14px; outline: none; }
 .search input::placeholder { color: var(--ink-3); }
@@ -246,6 +249,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   :root { --header-h: 112px; }
   .header-top, .site-header.compact .header-top { grid-template-columns: 1fr auto; grid-template-rows: auto auto; height: auto; gap: 10px 12px; padding-top: 10px; padding-bottom: 10px; }
   .logo img { height: 24px; }
+  .brand-ko { display: none; }
   .search { grid-column: 1 / -1; grid-row: 2; }
   .search input { height: 38px; }
   .util { grid-column: 2; grid-row: 1; }
