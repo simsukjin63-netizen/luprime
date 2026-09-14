@@ -1,0 +1,100 @@
+// 샘플 데이터. 실제 서비스에서는 API 응답으로 대체하세요.
+// grade: N(미사용신품) / S / A / USED
+const P = (id, brand, name, price, grade, img, extra = {}) => ({ id, brand, name, price, grade, img, ...extra });
+
+const PRODUCTS = {
+  new: [
+    P(1, 'Chanel', '샤넬 클래식 미디움 플랩백 캐비어', 9800000, 'A', 'assets/img/product/p-01.jpg', { cat: '가방' }),
+    P(2, 'Rolex', '롤렉스 서브마리너 데이트 스틸 (126610LN)', 15900000, 'S', 'assets/img/product/p-02.webp', { cat: '시계' }),
+    P(3, 'Hermes', '에르메스 켈리28 에버컬러 (Y)', 21500000, 'N', 'assets/img/product/p-03.webp', { cat: '가방' }),
+    P(4, 'Cartier', '까르띠에 러브 브레이슬릿 옐로우골드', 6400000, 'A', 'assets/img/product/p-04.webp', { cat: '주얼리' }),
+    P(5, 'Louis Vuitton', '루이비통 네버풀 MM 모노그램', 1650000, 'A', 'assets/img/product/p-05.webp', { cat: '가방' }),
+    P(6, 'Van Cleef & Arpels', '반클리프 빈티지 알함브라 목걸이', 4980000, 'USED', 'assets/img/product/p-06.webp', { cat: '주얼리' }),
+    P(7, 'Max Mara', '막스마라 카멜 테디 코트', 1890000, 'A', 'assets/img/product/p-07.webp', { cat: '의류' }),
+    P(8, 'Chanel', '샤넬 22백 스몰 블랙', 6900000, 'N', 'assets/img/product/p-08.jpg', { cat: '가방' }),
+    P(9, 'Dior', '디올 레이디 디올 미디움 카나쥬', 5200000, 'A', 'assets/img/product/p-09.webp', { cat: '가방' }),
+    P(10, 'Gucci', '구찌 마몽 미니 숄더백', 1380000, 'A', 'assets/img/product/p-10.jpg', { cat: '가방' }),
+  ],
+  pricedown: [
+    P(11, 'Max Mara', '막스마라 카멜 후드 코트', 850000, 'A', 'assets/img/product/s-01.webp', { was: 1100000, cat: '의류' }),
+    P(12, 'Isabel Marant', '이자벨마랑 민소매 원피스', 120000, 'A', 'assets/img/product/s-02.webp', { was: 180000, cat: '의류' }),
+    P(13, 'Lemaire', '르메르 포춘 크루아상백', 1000000, 'A', 'assets/img/product/s-03.webp', { was: 1250000, cat: '가방' }),
+    P(14, 'Chanel', '샤넬 체인 숄더백', 3100000, 'A', 'assets/img/product/s-04.webp', { was: 3600000, cat: '가방' }),
+    P(15, 'Fabiana Filippi', '파비아나필리피 후드 패딩 베스트', 350000, 'A', 'assets/img/product/s-05.jpg', { was: 480000, cat: '의류' }),
+    P(16, 'Kenzo', '겐조 간절기 와이드 바지', 71000, 'A', 'assets/img/product/s-06.webp', { was: 99000, cat: '의류' }),
+    P(17, 'Cartier', '까르띠에 탱크 머스트 스몰', 3700000, 'USED', 'assets/img/product/s-07.webp', { was: 4100000, cat: '시계' }),
+    P(18, 'Tiffany', '티파니 다이아 바이 더 야드 목걸이', 1300000, 'USED', 'assets/img/product/s-08.webp', { was: 1500000, cat: '주얼리' }),
+    P(19, 'Bottega Veneta', '보테가 베네타 카세트 미니', 1980000, 'A', 'assets/img/product/s-09.webp', { was: 2300000, cat: '가방' }),
+  ],
+  highend: [
+    P(21, 'Hermes', '에르메스 네오가든23 (G)', 6900000, 'N', 'assets/img/product/p-03.webp'),
+    P(22, 'Hermes', '에르메스 핵 벌킨40 (Y)', 12500000, 'A', 'assets/img/product/p-08.jpg'),
+    P(23, 'Hermes', '에르메스 NEW ZIP 에르백 라지 (K)', 4200000, 'A', 'assets/img/product/p-01.jpg'),
+    P(24, 'Hermes', '에르메스 글레난 투 고 파우치 (W)', 1900000, 'A', 'assets/img/product/p-05.webp'),
+    P(25, 'Hermes', '에르메스 프륨32 (J)', 5600000, 'USED', 'assets/img/product/p-09.webp'),
+    P(26, 'Hermes', '에르메스 켈리32 (Y)', 19800000, 'A', 'assets/img/product/p-10.jpg'),
+    P(27, 'Hermes', '에르메스 볼리드1923 25 (W)', 8900000, 'A', 'assets/img/product/p-07.webp'),
+    P(28, 'Hermes', '에르메스 벌킨25 (R)', 27000000, 'S', 'assets/img/product/p-02.webp'),
+  ],
+  timesale: [
+    P(31, 'Saint Laurent', '생로랑 케이트백 (469390)', 980000, 'A', 'assets/img/product/s-10.webp', { was: 1200000 }),
+    P(32, 'Dior', '디올 옴므 오블리크 카드지갑', 290000, 'A', 'assets/img/product/s-11.webp', { was: 380000 }),
+    P(33, 'Dior', '디올 카로 버킷백 M3369', 2350000, 'A', 'assets/img/product/s-12.jpg', { was: 2900000 }),
+    P(34, 'Saint Laurent', '생로랑 모노그램 반지갑 (414404)', 320000, 'A', 'assets/img/product/s-03.webp', { was: 420000 }),
+    P(35, 'Saint Laurent', '생로랑 니키 모노그램 숄더백', 1450000, 'A', 'assets/img/product/s-04.webp', { was: 1800000 }),
+    P(36, 'Dior', '디올 바비백 미듐', 2100000, 'USED', 'assets/img/product/s-09.webp', { was: 2600000 }),
+    P(37, 'Dior', '디올 페이던트 레이디백 미듐', 3300000, 'A', 'assets/img/product/s-07.webp', { was: 3900000 }),
+  ],
+  unused: [
+    P(41, 'Hermes', '에르메스 네오가든23 (G)', 6900000, 'N', 'assets/img/product/p-03.webp', { tags: ['케이스', '더스트'] }),
+    P(42, 'Issey Miyake', '이세이미야케 긴소매', 550000, 'N', 'assets/img/product/s-01.webp'),
+    P(43, 'Chanel', '샤넬 캐비어 25백 미니', 10500000, 'N', 'assets/img/product/p-08.jpg', { tags: ['케이스', '더스트'] }),
+    P(44, 'Berluti', '벨루티 장지갑', 500000, 'N', 'assets/img/product/s-06.webp', { tags: ['케이스', '더스트'] }),
+    P(45, 'Chanel', '샤넬 캐비어 베니티 탑핸들 크로스백', 5500000, 'N', 'assets/img/product/p-01.jpg', { tags: ['케이스', '더스트'] }),
+    P(46, 'Chanel', '샤넬 맥시 탑핸들 플랩 백 AS6309', 13300000, 'N', 'assets/img/product/p-10.jpg', { tags: ['케이스', '더스트', '인보이스'] }),
+    P(47, 'Bottega Veneta', '보테가 베네타 테리 반소매', 250000, 'N', 'assets/img/product/s-02.webp'),
+    P(48, 'Chanel', '샤넬 카드지갑', 850000, 'N', 'assets/img/product/s-08.webp', { tags: ['케이스', '더스트'] }),
+  ],
+  hot: [
+    P(51, 'Saint Laurent', '생로랑 레더 미니 버킷백', 800000, 'N', 'assets/img/product/p-05.webp'),
+    P(52, 'Tiffany', '티파니 다이아 보우 반지', 2580000, 'USED', 'assets/img/product/p-04.webp'),
+    P(53, 'Cartier', '까르띠에 트리니티 팔찌', 1500000, 'USED', 'assets/img/product/p-06.webp'),
+    P(54, 'Chanel', '샤넬 벨벳 미니 크로스백', 1990000, 'S', 'assets/img/product/p-01.jpg'),
+    P(55, 'Tiffany', '티파니 다이아 바이 더 야드 목걸이', 1300000, 'USED', 'assets/img/product/s-08.webp'),
+    P(56, 'Cartier', '까르띠에 베누아 미니 다이아 골드 시계', 12900000, 'USED', 'assets/img/product/p-02.webp'),
+    P(57, 'Chanel', '샤넬 미니 크로스백', 2980000, 'S', 'assets/img/product/p-08.jpg', { soldout: true }),
+    P(58, 'Van Cleef & Arpels', '반클리프 빈티지 알함브라 목걸이', 5220000, 'USED', 'assets/img/product/p-09.webp'),
+    P(59, 'Rolex', '롤렉스 데이트저스트 36 스틸', 11800000, 'A', 'assets/img/product/p-07.webp'),
+    P(60, 'Tiffany', '티파니 버드 온 어 락 목걸이', 5000000, 'USED', 'assets/img/product/p-10.jpg', { soldout: true }),
+  ],
+};
+
+const STORES = {
+  '서울': [
+    { name: '청담 본점', addr: '서울특별시 강남구 압구정로 71길 16 1, 2층', tel: '02-000-0001', hours: '10:30 ~ 20:00' },
+    { name: '압구정점', addr: '서울특별시 강남구 압구정로 30길 12', tel: '02-000-0002', hours: '10:30 ~ 20:00' },
+    { name: '한남점', addr: '서울특별시 용산구 이태원로 55가길 8', tel: '02-000-0003', hours: '11:00 ~ 20:00' },
+    { name: '반포점', addr: '서울특별시 서초구 신반포로 176', tel: '02-000-0004', hours: '10:30 ~ 20:00' },
+    { name: '명동점', addr: '서울특별시 중구 명동길 14', tel: '02-000-0005', hours: '10:30 ~ 21:00' },
+    { name: '잠실점', addr: '서울특별시 송파구 올림픽로 300', tel: '02-000-0006', hours: '10:30 ~ 20:00' },
+  ],
+  '수도권': [
+    { name: '판교점', addr: '경기도 성남시 분당구 판교역로 146', tel: '031-000-0001', hours: '10:30 ~ 20:00' },
+    { name: '분당점', addr: '경기도 성남시 분당구 황새울로 360번길 21', tel: '031-000-0002', hours: '10:30 ~ 20:00' },
+    { name: '인천 송도점', addr: '인천광역시 연수구 송도과학로 16번길 33-4', tel: '032-000-0001', hours: '10:30 ~ 20:00' },
+  ],
+  '부산': [
+    { name: '해운대점', addr: '부산광역시 해운대구 센텀남대로 35', tel: '051-000-0001', hours: '10:30 ~ 20:00' },
+    { name: '서면점', addr: '부산광역시 부산진구 가야대로 772', tel: '051-000-0002', hours: '10:30 ~ 20:00' },
+  ],
+  '대구': [
+    { name: '동성로점', addr: '대구광역시 중구 동성로 30', tel: '053-000-0001', hours: '10:30 ~ 20:00' },
+    { name: '수성점', addr: '대구광역시 수성구 달구벌대로 2528', tel: '053-000-0002', hours: '10:30 ~ 20:00' },
+  ],
+  '매입센터': [
+    { name: '강남 매입센터', addr: '서울특별시 강남구 테헤란로 000 5층', tel: '1544-0000', hours: '10:00 ~ 18:00' },
+    { name: '시계 매입센터', addr: '서울특별시 강남구 선릉로 000', tel: '1544-0000', hours: '10:00 ~ 18:00' },
+    { name: '주얼리 매입센터', addr: '서울특별시 강남구 도산대로 000', tel: '1544-0000', hours: '10:00 ~ 18:00' },
+    { name: '부산 매입센터', addr: '부산광역시 해운대구 센텀중앙로 000', tel: '051-000-0009', hours: '10:00 ~ 18:00' },
+  ],
+};
